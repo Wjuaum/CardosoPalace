@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardoso Palace Hotel | Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Login Page -->
+  <div id="login-page" class="login-page hidden">
+    <div class="login-container">
+      <div class="login-left">
+        <div class="login-brand">
+          <span class="material-icons brand-icon">apartment</span>
+          <h1>Cardoso Palace Hotel</h1>
+        </div>
+        <div class="login-hero-text">
+          <h2>Bem-vindo ao Painel Administrativo</h2>
+          <p>Gerencie reservas, quartos e hóspedes com facilidade e eficiência.</p>
+        </div>
+        <div class="login-stats">
+          <div class="login-stat"><span class="material-icons">bed</span><span>44 Quartos</span></div>
+          <div class="login-stat"><span class="material-icons">groups</span><span>Gestão Completa</span></div>
+          <div class="login-stat"><span class="material-icons">security</span><span>Acesso Seguro</span></div>
+        </div>
+      </div>
+      <div class="login-right">
+        <div class="login-form-wrapper">
+          <h2>Login Administrativo</h2>
+          <p class="login-subtitle">Acesso restrito a pessoal autorizado.</p>
+          <form id="login-form" autocomplete="off">
+            <div class="form-group">
+              <label for="username">Usuário</label>
+              <div class="input-icon-wrapper">
+                <span class="material-icons">person</span>
+                <input type="text" id="username" placeholder="Digite seu usuário" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Senha</label>
+              <div class="input-icon-wrapper">
+                <span class="material-icons">lock</span>
+                <input type="password" id="password" placeholder="Digite sua senha" required>
+              </div>
+            </div>
+            <div id="login-error" class="login-error hidden">Credenciais inválidas.</div>
+            <button type="submit" class="btn-login">
+              <span class="material-icons">login</span>
+              Entrar no Sistema
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Layout -->
+  <div id="admin-layout" class="admin-layout hidden">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <span class="material-icons">apartment</span>
+        <div>
+          <h2>Cardoso Palace</h2>
+          <span class="brand-subtitle">Hotel Admin</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#dashboard" class="nav-item active" data-page="dashboard">
+          <span class="material-icons">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a href="#reservas" class="nav-item" data-page="reservas">
+          <span class="material-icons">calendar_month</span>
+          <span>Reservas</span>
+        </a>
+        <a href="#quartos" class="nav-item" data-page="quartos">
+          <span class="material-icons">bed</span>
+          <span>Quartos</span>
+        </a>
+        <a href="#hospedes" class="nav-item" data-page="hospedes">
+          <span class="material-icons">group</span>
+          <span>Hóspedes</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar">
+            <span class="material-icons">admin_panel_settings</span>
+          </div>
+          <div>
+            <span class="user-name">Administrador</span>
+            <span class="user-role">Gerente Geral</span>
+          </div>
+        </div>
+        <button id="btn-logout" class="btn-logout" title="Sair">
+          <span class="material-icons">logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div id="page-content"></div>
+    </main>
+  </div>
+
+  <!-- Modal Container -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div id="modal-container" class="modal-container"></div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/pages/dashboard.js"></script>
+  <script src="js/pages/reservas.js"></script>
+  <script src="js/pages/quartos.js"></script>
+  <script src="js/pages/hospedes.js"></script>
+  <script src="js/router.js"></script>
+</body>
+</html>
