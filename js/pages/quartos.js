@@ -77,10 +77,14 @@ function renderQuartosGrid(data) {
 
   const roomImages = {
     'Standard': 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=400&q=80',
-    'Deluxe': 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=400&q=80',
-    'Suite': 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=400&q=80',
-    'Presidencial': 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=400&q=80',
-    'Familiar': 'https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?auto=format&fit=crop&w=400&q=80'
+    'Casal com Janela': 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=400&q=80',
+    'Casal sem Janela': 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=400&q=80',
+    'Suite com Janela': 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=400&q=80',
+    'Suite sem Janela': 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=400&q=80',
+    'Suite Master': 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=400&q=80',
+    'Duplo Camas Separadas': 'https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?auto=format&fit=crop&w=400&q=80',
+    'Triplo em 2 Camas': 'https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?auto=format&fit=crop&w=400&q=80',
+    '3 Camas': 'https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?auto=format&fit=crop&w=400&q=80'
   };
 
   document.getElementById('rooms-grid').innerHTML = data.map(q => {
@@ -143,10 +147,14 @@ function openAddQuartoModal() {
         <div><label>Tipo</label>
           <select class="form-control" id="q-tipo">
             <option>Standard</option>
-            <option>Deluxe</option>
-            <option>Suite</option>
-            <option>Presidencial</option>
-            <option>Familiar</option>
+            <option>Casal com Janela</option>
+            <option>Casal sem Janela</option>
+            <option>Suite com Janela</option>
+            <option>Suite sem Janela</option>
+            <option>Suite Master</option>
+            <option>Duplo Camas Separadas</option>
+            <option>Triplo em 2 Camas</option>
+            <option>3 Camas</option>
           </select>
         </div>
       </div>
@@ -237,7 +245,7 @@ function openEditQuartoModal(id) {
         <div><label>Número</label><input class="form-control" id="eq-numero" value="${q.numero_quarto || ''}" required></div>
         <div><label>Tipo</label>
           <select class="form-control" id="eq-tipo">
-            ${['Standard', 'Deluxe', 'Suite', 'Presidencial', 'Familiar'].map(t =>
+            ${['Standard', 'Casal com Janela', 'Casal sem Janela', 'Suite com Janela', 'Suite sem Janela', 'Suite Master', 'Duplo Camas Separadas', 'Triplo em 2 Camas', '3 Camas'].map(t =>
     `<option ${q.tipo === t ? 'selected' : ''}>${t}</option>`).join('')}
           </select>
         </div>
